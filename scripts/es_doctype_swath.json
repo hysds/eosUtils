@@ -1,0 +1,70 @@
+{
+  "_id": {
+    "path": "id", 
+    "type": "string", 
+    "store": "yes", 
+    "index": "not_analyzed"
+  }, 
+  "_timestamp": {
+    "enabled": true, 
+    "store": "yes"
+  },
+  "properties": {
+    "version": {
+      "index": "not_analyzed", 
+      "type": "string"
+    }, 
+    "starttime": {
+      "type": "date", 
+      "format": "dateOptionalTime"
+    }, 
+    "data_product_name": {
+      "index": "not_analyzed", 
+      "type": "string"
+    }, 
+    "min_lon": {
+      "type": "double"
+    }, 
+    "min_lat": {
+      "type": "double"
+    }, 
+    "endtime": {
+      "type": "date", 
+      "format": "dateOptionalTime"
+    }, 
+    "max_lat": {
+      "type": "double"
+    }, 
+    "max_lon": {
+      "type": "double"
+    }, 
+    "location": {
+      "tree": "quadtree", 
+      "type": "geo_shape", 
+      "precision": "1m"
+    }, 
+    "starttime": {
+      "path": "metadata.starttime", 
+      "type": "date", 
+      "format": "dateOptionalTime"
+    }, 
+    "endtime": {
+      "path": "metadata.endtime", 
+      "type": "date", 
+      "format": "dateOptionalTime"
+    }, 
+    "id": {
+      "index": "not_analyzed", 
+      "type": "string"
+    }, 
+    "center": {
+      "tree": "quadtree", 
+      "type": "geo_shape", 
+      "precision": "1m"
+    }, 
+    "dataset": {
+      "index": "not_analyzed", 
+      "type": "string"
+    }
+  }
+}

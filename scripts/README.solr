@@ -1,0 +1,21 @@
+####################################################
+#Import granule info into solr
+####################################################
+Start up SOLR:
+$ cd /home/sflops/apache-solr-1.4.1/eos
+$ java -jar start.jar  
+
+MODIS:
+$ wget --mirror -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/TERRA
+$ wget --mirror -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/AQUA
+$ python dumpCSV_MODIS.py > MODIS.csv
+$ curl 'http://localhost:8983/solr/update/csv?stream.file=/home/sflops/dev/eosUtils/scripts/MODIS.csv&stream.contentType=text/plain;charset=utf-8&commit=true'
+
+
+AIRS:
+$ rsync -rptvzLe ssh --include "????/" --include "??/" --include "airx2ret/" --include "*.met" --exclude "*" ${USER}@${WEATHER}:/tds/archive/AIRSOps/airs/gdaac/v5 airs
+$ python dumpCSV_AIRS.py > AIRS.csv
+$ curl 'http://localhost:8983/solr/update/csv?stream.file=/home/sflops/dev/eosUtils/scripts/AIRS.csv&stream.contentType=text/plain;charset=utf-8&commit=true'
+
+Commit:
+$ curl http://localhost:8983/solr/update --data-binary '<commit/>' -H 'Content-type:text/xml;charset=utf-8'

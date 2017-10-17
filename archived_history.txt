@@ -1,0 +1,179 @@
+commit ab2c4a1f51304a2fcc196615aa1670c57957265e
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Fri Jun 3 13:43:05 2016 -0700
+
+    updated AIRS ftp server
+
+commit 4e0f72a951970a7159fb788babec42056ce9667f
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Fri Jun 3 12:51:24 2016 -0700
+
+    add .gitignore
+
+commit 9e2fd35a079bce400e27384441ce956ac9aa90d4
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Mar 18 15:19:39 2015 +0000
+
+    Updated for cvo.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=8357
+
+commit 480801ee89381f7619eaa65adb52b1c57eafcf80
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Jan 29 20:22:56 2014 +0000
+
+    Updated wget commands for MODIS.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6497
+
+commit 325c9748281386f0ea1e39683bc1d05a76acd4c8
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Tue Jan 28 22:59:26 2014 +0000
+
+    Updated to read v6 AIRS metadata.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6496
+
+commit fc92af02b5c80b22022e5efac75b2043ab9335bd
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Tue Jan 28 18:41:36 2014 +0000
+
+    Use sqlite.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6492
+
+commit 9f6cac267975ee6e6115f32e08a410148ba7221b
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Tue Jan 28 18:40:17 2014 +0000
+
+    Use v6.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6491
+
+commit 164c5965695dad22513dc4d8a46fe147c9c68380
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Fri Jan 17 22:50:42 2014 +0000
+
+    Populate local elasticsearch.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6434
+
+commit 61c4143b29aebc73605d1f0da9cfbe0519d6a13c
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Sat Jan 11 01:05:11 2014 +0000
+
+    Changed to version 6.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6389
+
+commit 3f9e44117e979a4bcca799c7d01b29ec3a92db5b
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Fri Nov 1 20:53:03 2013 +0000
+
+    Added script for import CloudSat into GRQ.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6141
+
+commit 231e7f4523e2033aa87d8540d52ab810003ffbec
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Fri Nov 1 19:48:39 2013 +0000
+
+    Updated.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6139
+
+commit 3c61495371148bdae3f30302134b0064d1550055
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Fri Nov 1 19:40:06 2013 +0000
+
+    Added.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=6138
+
+commit 8daf9f42b1cdd0b3edeadd89c07b8c3e323ae967
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Mon Oct 14 15:32:58 2013 +0000
+
+    Polygon will close the polygon for us.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5978
+
+commit 84221fa1d5faad6e3098e67322c1341afd9cb1c7
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Fri Oct 4 21:40:51 2013 +0000
+
+    Index AIRS and MODIS metadata into ElasticSearch.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5907
+
+commit 2eec1f1ded6ab8ac2c1256dcb71bf127c954b2e0
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Feb 6 01:12:11 2013 +0000
+
+    Fixed README.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5345
+
+commit 7902f2ae134776928057238edc223d7ca8420e9e
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Feb 6 01:07:27 2013 +0000
+
+    Updated.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5344
+
+commit eaf6b8d5bcea1681ca94e62f76ecb4caa9645fd7
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Feb 6 00:51:02 2013 +0000
+
+    Fixed bug.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5343
+
+commit 7e00020277c7087511bfbbe264cabb0fc62cba3f
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Nov 21 20:30:28 2012 +0000
+
+    Return bbox for ALOS dataset.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5194
+
+commit 5d7da542519239dcfb7aceac46e86f310e86e5f6
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Nov 21 20:14:26 2012 +0000
+
+    Removed duplicate code (grq/grq/lib/updateSqlite_ALOS.py).
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5193
+
+commit f41967365c13e2761b9b0bffb9613aa6c8d080f4
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Mon Nov 19 22:09:20 2012 +0000
+
+    Configured ALOS dataset to return extra metadata fields in addition to the normal ones.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5185
+
+commit 45f61039868c8fc78bc0a6fcca4c2774e34b763c
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Mon Nov 19 20:57:58 2012 +0000
+
+    Update url catalog for frame_alos.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5183
+
+commit 0b65272f77dbad701e416a5bd1333a2652766822
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Mon Nov 19 20:01:42 2012 +0000
+
+    Added script to update ALOS sqlite database.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5182
+
+commit b75447a4d6c17782c3fbd674b68a62f92a637282
+Author: gmanipon <gmanipon@jpl.nasa.gov>
+Date:   Wed Nov 7 18:08:41 2012 +0000
+
+    Copied to new trunk.
+    
+    svn path=/trunk/SciFlo/eosUtils/; revision=5144

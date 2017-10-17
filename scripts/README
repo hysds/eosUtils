@@ -1,0 +1,55 @@
+####################################################
+#Populate SQLite
+####################################################
+AIRS:
+$ wget --mirror -nv -np -nH -A *.hdf.xml --directory-prefix=./airs_xml --cut-dirs=5 ftp://airsl2.ecs.nasa.gov/ftp/data/s4pa/Aqua_AIRS_Level2/AIRX2RET.006
+$ python allGranulesImportDb_AIRS_sqlite.py ~/sciflo/sqlite_data/AIRS.db airs_xml
+
+MODIS-Terra:
+$ wget -N -r -l inf --no-remove-listing --no-use-server-timestamps -c --tries=3 --waitretry=3 -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/6/TERRA
+$ python allGranulesImportDb_sqlite.py MODIS-Terra ~/sciflo/sqlite_data/MODIS-Terra.db ladsweb.nascom.nasa.gov/geoMeta/6/TERRA
+
+MODIS-Aqua:
+$ wget -N -r -l inf --no-remove-listing --no-use-server-timestamps -c --tries=3 --waitretry=3 -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/6/AQUA
+$ python allGranulesImportDb_sqlite.py MODIS-Aqua ~/sciflo/sqlite_data/MODIS-Aqua.db ladsweb.nascom.nasa.gov/geoMeta/6/AQUA
+
+####################################################
+#Populate ElasticSearch
+####################################################
+AIRS:
+$ wget --mirror -nv -np -nH -A *.hdf.xml --directory-prefix=./airs_xml --cut-dirs=5 ftp://airsl2.ecs.nasa.gov/ftp/data/s4pa/Aqua_AIRS_Level2/AIRX2RET.006
+$ python allGranulesUpdateGRQ_AIRS.py airs_xml
+
+MODIS-Terra:
+$ wget -N -r -l inf --no-remove-listing --no-use-server-timestamps -c --tries=3 --waitretry=3 -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/6/TERRA
+$ python allGranulesUpdateGRQ_MODIS.py ladsweb.nascom.nasa.gov/geoMeta/6/TERRA
+
+MODIS-Aqua:
+$ wget -N -r -l inf --no-remove-listing --no-use-server-timestamps -c --tries=3 --waitretry=3 -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/6/AQUA
+$ python allGranulesUpdateGRQ_MODIS.py ladsweb.nascom.nasa.gov/geoMeta/6/AQUA
+
+CloudSat:
+$ ~/bin/mirror_cloudsat_all.sh
+$ python allGranulesUpdateGRQ_CloudSat.py /data/public/repository/products/cloudsat/2B-GEOPROF.R04
+
+####################################################
+#!!!!!!!!!!!!! DEPRECATED !!!!!!!!!!!!!!!!!!!!!!!!!!
+#Creating granule tables
+####################################################
+MODIS-Terra:
+$ wget --mirror -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/TERRA
+$ python allGranulesPickleGenerator.py MODIS-Terra
+$ python orbitTableGenerator_MODISData.py MODIS-Terra
+$ mv *pkl ../eosUtils/
+
+MODIS-Aqua:
+$ wget --mirror -nv ftp://ladsweb.nascom.nasa.gov/geoMeta/AQUA
+$ python allGranulesPickleGenerator.py MODIS-Aqua
+$ python orbitTableGenerator_MODISData.py MODIS-Aqua
+$ mv *pkl ../eosUtils/
+
+AIRS:
+$ rsync -rptvzLe ssh --include "????/" --include "??/" --include "airx2ret/" --include "*L2.RetStd.v5.*.met" --exclude "*" ${USER}@${WEATHER}:/tds/archive/AIRSOps/airs/gdaac/v5 airs
+$ python allGranulesPickleGenerator_AIRS.py
+$ python orbitTableGenerator_AIRS.py
+$ mv *pkl ../eosUtils/
